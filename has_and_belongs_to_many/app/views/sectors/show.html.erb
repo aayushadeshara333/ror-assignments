@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+<%= render @sector %>
+<div>
+  <b>Sectors</b>
+  <% @sector.industries.each do |industry|%>
+    <%= industry.name%> |
+  <% end %>
+</div>
+<div>
+</div>

@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+<%= render @patient %>
+<div>
+  <strong>Appointments of <%= @patient.name %></strong>
+  <% @patient.appointments.each do |appointment|%>
+    <div>
+      -> At <%= appointment.appointment_date%> with <%= appointment.physician.name%>
+    </div>
+  <%end%>
+</div>

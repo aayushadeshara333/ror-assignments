@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+<div class="d-flex justify-content-between align-items-center">
+  <h1>Physicians</h1>
+  <%= link_to "New physician", new_physician_path, class: "btn btn-primary" %>
+</div>
+<div id="physicians">
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Name</th>
+        <th scope="col">Email</th>
+        <th scope="col">Unique ID</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @physicians.each do |physician| %>
+        <tr>
+          <td><%= physician.name%></td>
+          <td><%= physician.email%></td>
+          <td><%= physician.uniq_id%></td>
+          <td><%= link_to "Details", physician, class: "btn btn-success" %></td>
+          <td><%= link_to "Edit", edit_physician_path(physician), class: "btn btn-warning" %></td>
+          <td><%= button_to "Destroy", physician, method: :delete, data: {confirm: "You sure?"}, class: "btn btn-danger" %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
